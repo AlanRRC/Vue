@@ -2,6 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#">
     <title>Vue Net Ninja</title>
     <script src="https://unpkg.com/vue@3.0.2"></script>
     <style>
@@ -19,11 +20,19 @@
     <h1>Hello, Vue :)</h1>
 
     <div id="app">
-        <!-- Conditional rendering -->
+        <!-- attribute binding -->
+        <a href=""></a>
+        
         <div v-if="showBooks"> 
-            <p>{{ title }} - {{ author }} - {{ age }}</p>
+            <ul>
+                <li v-for="book in books">
+                    <h3>{{book.title}} </h3>
+                    <p>{{book.author}}</p>
+                </li>
+            </ul>
         </div>
-       
+
+       <!-- Conditional rendering -->
         <button @click="toggleShowBooks">
             <span v-if="showBooks">Hide books</span>
             <span v-else>Show Books</span>
@@ -32,10 +41,10 @@
         <br />
 
         <!-- Mouse events  -->
-        <div class="box" @mouseover="handleEvent($event, 5)">mouseover</div>
+        <!-- <div class="box" @mouseover="handleEvent($event, 5)">mouseover</div>
         <div class="box" @mouseleave="handleEvent">mouseleave</div>
         <div class="box" @dblclick="handleEvent">doubleclick</div> 
-        <div class="box" @mousemove="handleMousemove">Position - {{x}} - {{y}}</div>
+        <div class="box" @mousemove="handleMousemove">Position - {{x}} - {{y}}</div> -->
 
         <!-- <div v-show="showBooks">currently showing books</div> -->
         <!-- Directives:type of event @ is a shortcut for v-on -->
