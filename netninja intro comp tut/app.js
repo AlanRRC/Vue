@@ -1,4 +1,3 @@
-// console.log("Hello, Vue")
 const app = Vue.createApp({
     data(){
         return {
